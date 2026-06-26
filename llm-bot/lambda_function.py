@@ -20,7 +20,7 @@ configuration = Configuration(
 )
 
 # Bedrockクライアントの初期化（グローバルに置くことで実行環境を再利用）
-bedrock_client = boto3.client('bedrock-runtime')
+bedrock_client = boto3.client('bedrock-runtime', region_name='us-east-1')
 
 def lambda_handler(event, context):
     logger.info(f"Received event: {json.dumps(event)}")
